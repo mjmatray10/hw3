@@ -11,7 +11,7 @@
     </thead>
     <tbody>
 <?php
-while ($coach = $coaches->fetch_assoc()) {
+while ($university = $universities->fetch_assoc()) {
   ?>
   <tr>
     <td><?php echo $university['university_id']; ?></td>
