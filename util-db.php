@@ -7,14 +7,17 @@ function get_db_connection() {
     $dbname = "hw3db"; // Your database name
     $port = 3306; // MySQL default port
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname, $port);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    try {
+        // Create connection using PDO
+        $dsn = "mysql:host=$servername;dbname=$dbname;port=$port;charset=utf8mb4";
+        $conn = new PDO($dsn, $username, $password);
+        
+        // Set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        return $conn;
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
     }
-
-    return $conn;
 }
 ?>
