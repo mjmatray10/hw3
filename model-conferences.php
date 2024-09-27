@@ -2,15 +2,17 @@
 function selectConferences() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("select university_name, conference from university u join team t on u.university_id = t.university_id where conference = ?");
-        $stmt->bind_param("i", $cid);
+        $stmt = $conn->prepare("SELECT DISTINCT conference FROM university u JOIN team t ON u.university_id = t.university_id");
         $stmt->execute();
         $result = $stmt->get_result();
-        $conn->close();
+        $stmt->close();
         return $result;
     } catch (Exception $e) {
-        $conn->close();
         throw $e;
+    } finally {
+        if ($conn) {
+            $conn->close();
+        }
     }
 }
 
