@@ -7,6 +7,7 @@
       <th>Location</th>
       <th>Mascot</th>
       <th>Name</th>
+      <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,12 @@ while ($university = $universities->fetch_assoc()) {
     <td><?php echo $university['university_location']; ?></td>
     <td><?php echo $university['university_mascot']; ?></td>
     <td><?php echo $university['university_name']; ?></td>
+    <td>
+        <form method="post", action="programs-by-university.php">
+          <input type="hidden" name="uid", value="<?php echo $university['university_id']; ?>">
+          <button type="submit" class="btn btn-primary">Programs</button>
+        </form>
+    </td>
   </tr>
   <?php
 }
