@@ -18,9 +18,9 @@ while ($conference = $allConferences->fetch_assoc()) {
     <td><?php echo $conference['conference']; ?></td>
     <td>
         <form method="post" action="teams-by-conference.php">
-          <input type="hidden" name="conference_id" value="<?php echo $conference['conference_id']; ?>">
-          <button type="submit" class="btn btn-primary">Teams</button>
-        </form>
+    <input type="hidden" name="conference_id" value="<?php echo $conference['conference_id']; ?>">
+    <button type="submit" class="btn btn-primary">Teams</button>
+</form>
     </td>
   </tr>
 <?php
