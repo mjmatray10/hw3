@@ -2,6 +2,7 @@
 <div class="card-group">
 <?php
 $allConferences = selectConferences();
+
 while ($conference = $allConferences->fetch_assoc()) {
 ?>
     <div class="card">
