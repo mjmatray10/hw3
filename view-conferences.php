@@ -1,30 +1,31 @@
-<h1>Teams in Conference</h1>
-<div class="card-group">
+<h1>Conferences</h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Conference</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
 <?php
 $allConferences = selectConferences();
-
 while ($conference = $allConferences->fetch_assoc()) {
 ?>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><?php echo $conference['conference']; ?></h5>
-        <p class="card-text">
-        <ul class="list-group">
-<?php
-  $teams = selectTeamsByConference($conference['conference']);
-  while ($team = $teams->fetch_assoc()) {
-?>
-    <li class="list-group-item">
-      <?php echo $team['university_id']; ?> - <?php echo $team['university_name']; ?>
-    </li>
-<?php    
-  }
-?>
-        </ul>
-        </p>
-      </div>
-    </div>
+  <tr>
+    <td><?php echo $conference['conference_id']; ?></td>
+    <td><?php echo $conference['conference']; ?></td>
+    <td>
+        <form method="post" action="teams-by-conference.php">
+          <input type="hidden" name="conference_id" value="<?php echo $conference['conference_id']; ?>">
+          <button type="submit" class="btn btn-primary">Teams</button>
+        </form>
+    </td>
+  </tr>
 <?php
 }
 ?>
+    </tbody>
+  </table>
 </div>
