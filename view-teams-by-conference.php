@@ -9,11 +9,11 @@
         </thead>
         <tbody>
 <?php
-while ($university = $teams->fetch_assoc()) {
+while ($team = $teams->fetch_assoc()) {
 ?>
             <tr>
-                <td><?php echo $university['university_id']; ?></td>
-                <td><?php echo $university['university_name']; ?></td>
+                <td><?php echo $team['university_id']; ?></td>
+                <td><?php echo $team['university_name']; ?></td>
             </tr>
 <?php
 }
