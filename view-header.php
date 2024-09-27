@@ -28,6 +28,9 @@
         <li class="nav-item">
           <a class="nav-link" href="coaches-with-universities.php">Coaches with Universities</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="conferences.php">Conferences</a>
+        </li>
       </ul>
     </div>
   </div>
