@@ -26,7 +26,7 @@
           <a class="nav-link" href="universities.php">Universities</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="coaches-with.php">Coaches with Universities</a>
+          <a class="nav-link" href="coaches-with-universities.php">Coaches with Universities</a>
         </li>
       </ul>
     </div>
