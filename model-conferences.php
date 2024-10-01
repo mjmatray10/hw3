@@ -2,7 +2,7 @@
 function selectConferences() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT DISTINCT conference_id, conference FROM conference");
+        $stmt = $conn->prepare("SELECT conference, MIN(conference_id) AS conference_id FROM conference GROUP BY conference");
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
