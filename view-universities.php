@@ -38,7 +38,7 @@ while ($university = $universities->fetch_assoc()) {
     <td>
        <form method="post", action="">
           <input type="hidden" name="uid", value="<?php echo $university['university_id']; ?>">
-         <input type-"hidden" name="actionType" value="Delete">
+         <input type="hidden" name="actionType" value="Delete">
           <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure?');">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-x" viewBox="0 0 16 16">
               <path d="M6.854 7.146a.5.5 0 1 0-.708.708L7.293 9l-1.147 1.146a.5.5 0 0 0 .708.708L8 9.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 9l1.147-1.146a.5.5 0 0 0-.708-.708L8 8.293z"/>
