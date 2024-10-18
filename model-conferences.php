@@ -2,7 +2,7 @@
 function selectConferences() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT conference FROM conference");
+        $stmt = $conn->prepare("SELECT conference_id, conference FROM conference");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
