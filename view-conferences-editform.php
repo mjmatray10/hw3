@@ -7,7 +7,7 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="editConferenceModal<?php echo $conference['conference_id']; ?>" tabindex="-1" aria-labelledby="editonferenceModalLabel<?php echo $conference['conference_id']; ?>" aria-hidden="true">
+<div class="modal fade" id="editConferenceModal<?php echo $conference['conference_id']; ?>" tabindex="-1" aria-labelledby="editConferenceModalLabel<?php echo $conference['conference_id']; ?>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
