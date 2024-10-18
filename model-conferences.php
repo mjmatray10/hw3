@@ -19,7 +19,7 @@ function selectConferences() {
 function insertConferences($conName, $conTeam) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `conference` (`conference_name`) VALUES (?)");
+        $stmt = $conn->prepare("INSERT INTO `conference` (`conference`) VALUES (?)");
         $stmt->bind_param("s", $conName);
         $success = $stmt->execute();
         $conn->close();
@@ -33,7 +33,7 @@ function insertConferences($conName, $conTeam) {
 function updateConferences($conName) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `conference` set `conference_name` = ? where conference_id = ?");
+        $stmt = $conn->prepare("update `conference` set `conference` = ? where conference_id = ?");
         $stmt->bind_param("si", $conName, $conid);
         $success = $stmt->execute();
         $conn->close();
