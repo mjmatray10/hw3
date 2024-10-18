@@ -4,6 +4,15 @@ require_once("model-universities.php");
 
 $pageTitle = "Universities";
 include "view-header.php";
+
+if (isset($_POST['actionType'])) {
+  switch($_POST['actionType']) {
+    case "Add":
+      insertUniversities($_POST['uLoc'], $_POST['uMas'], $_POST['uName']);
+      break;
+  }
+}
+
 $universities = selectUniversities();
 include "view-universities.php";
 include "view-footer.php";
