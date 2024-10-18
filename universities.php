@@ -8,7 +8,11 @@ include "view-header.php";
 if (isset($_POST['actionType'])) {
   switch($_POST['actionType']) {
     case "Add":
-      insertUniversities($_POST['uLoc'], $_POST['uMas'], $_POST['uName']);
+      if (insertUniversities($_POST['uLoc'], $_POST['uMas'], $_POST['uName'])) {
+        echo '<div class="alert alert-success" role="alert">University Added</div>';
+      } else {
+          echo '<div class="alert alert-danger" role="alert">Error</div>';
+      }
       break;
   }
 }
