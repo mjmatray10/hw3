@@ -16,4 +16,47 @@ function selectConferences() {
     }
 }
 
+function insertConferences($conName, $conTeam) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO `conference` (`conference_name`) VALUES (?)");
+        $stmt->bind_param("s", $conName);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function updateConferences($conName) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("update `conference` set `conference_name` = ? where conference_id = ?");
+        $stmt->bind_param("si", $conName, $conid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function deleteConferences($conid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("delete from conference where conference_id = ?");
+        $stmt->bind_param("i", $conid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+
 ?>
