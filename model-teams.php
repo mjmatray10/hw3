@@ -16,7 +16,7 @@ function selectTeams() {
 function insertTeams($tcoachid, $tuid, $tcon, $tFO, $trec, $tconid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO team (team_id, coach_id, university_id, conference, first_opponent, record, conference_id) VALUES (?,?,?,?,?,?,?)");
+        $stmt = $conn->prepare("INSERT INTO team (coach_id, university_id, conference, first_opponent, record, conference_id) VALUES (?,?,?,?,?,?)");
         $stmt->bind_param("iisssi", $tcoachid, $tuid, $tcon, $tFO, $trec, $tconid);
         $success = $stmt->execute();
         $conn->close();
@@ -30,7 +30,7 @@ function insertTeams($tcoachid, $tuid, $tcon, $tFO, $trec, $tconid) {
 function updateTeams($tcoachid, $tuid, $tcon, $tFO, $trec, $tconid, $tid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `team` set `team_id` = ?, `coach_id` = ?, `university_id` = ?, `conference` = ?, `first_opponent` = ?, `record` = ?, `conference_id` = ? where team_id = ?");
+        $stmt = $conn->prepare("update `team` set `coach_id` = ?, `university_id` = ?, `conference` = ?, `first_opponent` = ?, `record` = ?, `conference_id` = ? where team_id = ?");
         $stmt->bind_param("iisssii", $tcoachid, $tuid, $tcon, $tFO, $trec, $tconid, $tid);
         $success = $stmt->execute();
         $conn->close();
