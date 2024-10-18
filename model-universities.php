@@ -44,7 +44,7 @@ function updateUniversities($uLoc, $uMas, $uName, $uid) {
 function deleteUniversities($uid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from universities where university_id = ?");
+        $stmt = $conn->prepare("delete from university where university_id = ?");
         $stmt->bind_param("i", $uid);
         $success = $stmt->execute();
         $conn->close();
