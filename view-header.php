@@ -31,6 +31,9 @@
         <li class="nav-item">
           <a class="nav-link" href="conferences.php">Conferences</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="teams.php">Teams</a>
+        </li>
       </ul>
     </div>
   </div>
