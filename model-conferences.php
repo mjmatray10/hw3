@@ -13,10 +13,10 @@ function selectConferences() {
     }
 }
 
-function insertConferences($conName, $conTeam) {
+function insertConferences($conName) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `conference` VALUES (?)");
+        $stmt = $conn->prepare("INSERT INTO `conference` (`conference`) VALUES (?)");
         $stmt->bind_param("s", $conName);
         $success = $stmt->execute();
         $conn->close();
