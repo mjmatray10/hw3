@@ -18,11 +18,11 @@
         <form method="post" action="">
           <div class="mb-3">
             <label for="tcoachid" class="form-label">Coach ID</label>
-            <input type="text" class="form-control" id="cName" name = "cName">
+            <input type="text" class="form-control" id="tcoachid" name = "tcoachid">
           </div>
           <div class="mb-3">
             <label for="tuid" class="form-label">University ID</label>
-            <input type="text" class="form-control" id="cName" name = "cName">
+            <input type="text" class="form-control" id="tuid" name = "tuid">
           </div>
           <div class="mb-3">
             <label for="tcon" class="form-label">Conference</label>
