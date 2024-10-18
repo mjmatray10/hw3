@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php");
-require_once("model-coaches.php");
+require_once("model-teams.php");
 
 $pageTitle = "Teams";
 include "view-header.php";
@@ -32,7 +32,7 @@ if (isset($_POST['actionType'])) {
 }
 
 
-$coaches = selectTeams();
+$teams = selectTeams();
 include "view-teams.php";
 include "view-footer.php";
 ?>
