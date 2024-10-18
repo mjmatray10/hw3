@@ -2,17 +2,14 @@
 function selectConferences() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT conference, MIN(conference_id) AS conference_id FROM conference GROUP BY conference");
+        $stmt = $conn->prepare("SELECT conference FROM conference");
         $stmt->execute();
         $result = $stmt->get_result();
-        $stmt->close();
+        $conn->close();
         return $result;
     } catch (Exception $e) {
+        $conn->close();
         throw $e;
-    } finally {
-        if ($conn) {
-            $conn->close();
-        }
     }
 }
 
