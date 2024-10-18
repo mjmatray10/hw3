@@ -28,6 +28,7 @@
             <label for="uName" class="form-label">University Name</label>
             <input type="text" class="form-control" id="uName" name = "uName">
           </div>
+            <input type = "hidden" name = "actionType" value = "Add">
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
       </div>
