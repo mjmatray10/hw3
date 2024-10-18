@@ -27,7 +27,7 @@ function insertConferences($conName, $conTeam) {
     }
 }
 
-function updateConferences($conName) {
+function updateConferences($conName, $conid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `conference` set `conference` = ? where conference_id = ?");
