@@ -16,7 +16,7 @@ function selectCoaches() {
 function insertCoaches($cName, $cTeam) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `coach` (`coach_name`, `coach_university`) VALUES (?,?)");
+        $stmt = $conn->prepare("INSERT INTO `coach` (`coach_name`, `coach_team`) VALUES (?,?)");
         $stmt->bind_param("ss", $cName, $cTeam);
         $success = $stmt->execute();
         $conn->close();
