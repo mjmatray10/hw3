@@ -18,7 +18,7 @@
         <form method="post" action="">
           <div class="mb-3">
             <label for="conName<?php echo $conference['conference_id']; ?>" class="form-label">Conference Name</label>
-            <input type="text" class="form-control" id="conName<?php echo $conference['conference_id']; ?>" name = "conName" value="<?php echo $conference['conference_name']; ?>">
+            <input type="text" class="form-control" id="conName<?php echo $conference['conference_id']; ?>" name = "conName" value="<?php echo $conference['conference']; ?>">
           </div>
             <input type="hidden" name = "conid" value="<?php echo $conference['conference_id']; ?>">
             <input type = "hidden" name = "actionType" value = "Edit">
