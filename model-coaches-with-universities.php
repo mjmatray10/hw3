@@ -16,7 +16,7 @@ function selectCoaches() {
 function selectCoachesByUniversity($cid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT u.university_id, university_location, university_mascot, university_name, conference, first_opponent, record FROM university U JOIN team t ON U.university_id = t.university_id WHERE t.coach_id = ?");
+        $stmt = $conn->prepare("SELECT university_id, university_location, university_mascot, university_name FROM university U WHERE coach_id = ?");
         $stmt->bind_param("i", $cid);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -27,4 +27,7 @@ function selectCoachesByUniversity($cid) {
         throw $e;
     }
 }
+
+
+
 ?>
