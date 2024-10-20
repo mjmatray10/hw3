@@ -28,6 +28,34 @@ function selectCoachesByUniversity($cid) {
     }
 }
 
+function selectCoachesForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("SELECT coach_id, coach_name, FROM `coach` order by coach_name");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function selectUniversitiesForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("SELECT university_id, university_name, FROM `university` order by university_name");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
 function insertProgram($loc, $mas, $nam, $cid) {
     try {
         $conn = get_db_connection();
