@@ -13,7 +13,7 @@ while ($coach = $coaches->fetch_assoc()) {
   $universities = selectCoachesByUniversity($coach['coach_id']);
   while ($university = $universities->fetch_assoc()) {
 ?>
-    <li class="list-group-item"><?php echo $university['university_name']; ?> - <?php echo $university['record']; ?> - <?php echo $university['conference']; ?> - <?php echo $university['university_location']; ?></li>
+    <li class="list-group-item"><?php echo $university['university_name']; ?> - <?php echo $university['university_masot']; ?> - <?php echo $university['university_location']; ?></li>
 <?php    
   }
 ?>
