@@ -28,6 +28,48 @@ function selectCoachesByUniversity($cid) {
     }
 }
 
+function insertProgram($uid, $loc, $mas, $nam, $cid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO `university` (`university_location`, `university_mascot`, `university_name`, `coach_id`) VALUES (?,?,?,?)");
+        $stmt->bind_param("sssi", $loc, $mas, $nam, $cid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function updateProgram($uid, $loc, $mas, $nam, $cid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("update `university` set `university_location` = ?, `university_mascot` = ?, `university_name` = ?, `coach_id` = ? where university_id = ?");
+        $stmt->bind_param("sssii", $loc, $mas, $nam, $cid, $uid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function deleteProgram($uid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("delete from university where university_id = ?");
+        $stmt->bind_param("i", $uid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
 
 
 ?>
