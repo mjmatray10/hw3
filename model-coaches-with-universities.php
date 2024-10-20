@@ -28,7 +28,7 @@ function selectCoachesByUniversity($cid) {
     }
 }
 
-function insertProgram($uid, $loc, $mas, $nam, $cid) {
+function insertProgram($loc, $mas, $nam, $cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("INSERT INTO `university` (`university_location`, `university_mascot`, `university_name`, `coach_id`) VALUES (?,?,?,?)");
@@ -42,10 +42,10 @@ function insertProgram($uid, $loc, $mas, $nam, $cid) {
     }
 }
 
-function updateProgram($uid, $loc, $mas, $nam, $cid) {
+function updateProgram($loc, $mas, $nam, $cid, $uid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `university` set `university_location` = ?, `university_mascot` = ?, `university_name` = ?, `coach_id` = ? where university_id = ?");
+        $stmt = $conn->prepare("update `university` set `university_location` = ?, `university_mascot` = ?, `university_name` = ?, `coach_id` = ? where `university_id` = ?");
         $stmt->bind_param("sssii", $loc, $mas, $nam, $cid, $uid);
         $success = $stmt->execute();
         $conn->close();
