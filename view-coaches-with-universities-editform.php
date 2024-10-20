@@ -30,7 +30,7 @@
           </div>
           <div class="mb-3">
             <label for="cid<?php echo $university['university_id']; ?>" class="form-label">Coach ID</label>
-            <input type="text" class="form-control" id="cid<?php echo $university['university_id']; ?>" name = "cid" value="<?php echo $university['coach_id']; ?>">
+            <input type="text" class="form-control" id="cid<?php echo $university['university_id']; ?>" name="cid" value="<?php echo $university['coach_id']; ?>">
           </div>
             <input type="hidden" name = "uid" value="<?php echo $university['university_id']; ?>">
             <input type = "hidden" name = "actionType" value = "Edit">
