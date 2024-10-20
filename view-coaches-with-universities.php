@@ -1,4 +1,11 @@
 <h1>Coaches with Universities</h1>
+</div>
+  <div class = "col-auto">
+    <?php
+    include "view-coaches-with-universities-newform.php";
+    ?>
+  </div>
+</div>
 <div class="card-group">
 <?php
 while ($coach = $coaches->fetch_assoc()) {
@@ -13,7 +20,7 @@ while ($coach = $coaches->fetch_assoc()) {
   $universities = selectCoachesByUniversity($coach['coach_id']);
   while ($university = $universities->fetch_assoc()) {
 ?>
-    <li class="list-group-item"><?php echo $university['university_name']; ?> - <?php echo $university['university_mascot']; ?> - <?php echo $university['university_location']; ?></li>
+    <li class="list-group-item"><?php echo $university['university_name']; ?> - <?php echo $university['university_mascot']; ?> - <?php echo $university['university_location']; ?> <?php include "view-coaches-with-universities-editform.php"; ?></li>
 <?php    
   }
 ?>
