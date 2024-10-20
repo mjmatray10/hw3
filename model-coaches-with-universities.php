@@ -16,7 +16,7 @@ function selectCoaches() {
 function selectCoachesByUniversity($cid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT university_id, university_location, university_mascot, university_name FROM university U WHERE coach_id = ?");
+        $stmt = $conn->prepare("SELECT university_id, university_location, university_mascot, university_name, coach_id FROM university U WHERE coach_id = ?");
         $stmt->bind_param("i", $cid);
         $stmt->execute();
         $result = $stmt->get_result();
