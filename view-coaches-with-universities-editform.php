@@ -17,7 +17,7 @@
       <div class="modal-body">
         <form method="post" action="">
             <div class="mb-3">
-            <label for="uid<?php echo $university['university_id']; ?>" class="form-label">University</label>
+            <label for="uid<?php echo $university['university_id']; ?>" class="form-label">Coach</label>
 <?php
 $coachList = selectCoachesForInput();
 $selectedCoach = $university['coach_id'];
@@ -35,10 +35,6 @@ include "view-coach-input-list.php";
           <div class="mb-3">
             <label for="nam<?php echo $university['university_id']; ?>" class="form-label">Program Name</label>
             <input type="text" class="form-control" id="nam<?php echo $university['university_id']; ?>" name = "nam" value="<?php echo $university['university_name']; ?>">
-          </div>
-          <div class="mb-3">
-            <label for="cid<?php echo $university['university_id']; ?>" class="form-label">Coach</label>
-            <input type="text" class="form-control" id="cid<?php echo $university['university_id']; ?>" name="cid" value="<?php echo $university['coach_id']; ?>">
           </div>
             <input type="hidden" name = "uid" value="<?php echo $university['university_id']; ?>">
             <input type = "hidden" name = "actionType" value = "Edit">
