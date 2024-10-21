@@ -32,6 +32,7 @@
             <label for="cid" class="form-label">Coach ID</label>
 <?php
 $coachList = selectCoachesForInput();
+$selectedCoach = 0;
 include "view-coach-input-list.php";
 ?>
           </div>
