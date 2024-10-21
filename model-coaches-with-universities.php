@@ -31,7 +31,7 @@ function selectCoachesByUniversity($cid) {
 function selectCoachesForInput() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT coach_id, coach_name, FROM `coach` order by coach_name");
+        $stmt = $conn->prepare("SELECT coach_id, coach_name FROM `coach` order by coach_name");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
