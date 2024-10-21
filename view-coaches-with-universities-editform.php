@@ -16,6 +16,14 @@
       </div>
       <div class="modal-body">
         <form method="post" action="">
+            <div class="mb-3">
+            <label for="uid<?php echo $university['university_id']; ?>" class="form-label">University</label>
+<?php
+$coachList = selectCoachesForInput();
+$selectedCoach = $university['coach_id'];
+include "view-coach-input-list.php";
+?>
+          </div>
           <div class="mb-3">
             <label for="loc<?php echo $university['university_id']; ?>" class="form-label">Program Location</label>
             <input type="text" class="form-control" id="loc<?php echo $university['university_id']; ?>" name = "loc" value="<?php echo $university['university_location']; ?>">
@@ -29,7 +37,7 @@
             <input type="text" class="form-control" id="nam<?php echo $university['university_id']; ?>" name = "nam" value="<?php echo $university['university_name']; ?>">
           </div>
           <div class="mb-3">
-            <label for="cid<?php echo $university['university_id']; ?>" class="form-label">Coach ID</label>
+            <label for="cid<?php echo $university['university_id']; ?>" class="form-label">Coach</label>
             <input type="text" class="form-control" id="cid<?php echo $university['university_id']; ?>" name="cid" value="<?php echo $university['coach_id']; ?>">
           </div>
             <input type="hidden" name = "uid" value="<?php echo $university['university_id']; ?>">
