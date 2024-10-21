@@ -1,6 +1,12 @@
+<div class = "row">
+  <div class = "col">
 <h1>Coaches with Universities</h1>
-<div class="col-auto">
-  <?php include "view-coaches-with-universities-newform.php"; ?>
+  </div>
+  <div class = "col-auto">
+    <?php
+    include "view-coaches-with-universities-newform.php";
+    ?>
+  </div>
 </div>
 
 <div class="card-group">
