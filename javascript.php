@@ -37,9 +37,9 @@ include "view-header.php";
     const image = document.querySelector("#img1");
 
     document.querySelector("#addbtn").addEventListener("click", () => {
-        let w = image.width;
-        w += 10;
-        image.width = w;
+        let img = document.querySelector("#img1");
+        let currentWidth = img.clientWidth;
+        img.style.width = (currentWidth + 10) + 'px';
     });
 
     document.querySelector("#minusbtn").addEventListener("click", () => {
