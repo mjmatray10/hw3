@@ -43,9 +43,10 @@ include "view-header.php";
     });
 
     document.querySelector("#minusbtn").addEventListener("click", () => {
-        let w = image.width;  
-        w -= 10;
-        image.width = w > 0 ? w : 0;
+       let img = document.querySelector("#img1");
+       let currentWidth = img.clientWidth;
+       if (currentWidth > 10) {
+       img.style.width = (currentWidth - 10) + 'px'; }
     });
 
     let rotation = 0;
@@ -61,7 +62,8 @@ include "view-header.php";
     });
 
     document.querySelector("#resetbtn").addEventListener("click", () => {
-        image.width = 200;
+        let img = document.querySelector("#img1");
+        img.style.width = '200px';
         rotation = 0;
         image.style.transform = "rotate(0deg)";
         image.style.opacity = 1;
