@@ -21,6 +21,7 @@ include "view-header.php";
     <h1>JavaScript HW5</h1>
     
     <img id="img1" src="ou.png" style="height:200px; width:auto;"/>
+</br>
     
     <div class="btn-group mt-3" role="group">
         <button id="addbtn" class="btn btn-primary"><i class="bi bi-plus-square"></i></button>
