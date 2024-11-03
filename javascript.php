@@ -3,60 +3,70 @@ $PageTitle = "Home";
 include "view-header.php";
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <h1>Javascript HW5</h1>
+    <meta charset="UTF-8">
+    <title>JavaScript HW5</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-    <!-- charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- Data table -->
-    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-
     <!-- Animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-    <!-- Map -->
-    <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <!-- sweetalert2 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.8.0/sweetalert2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.8.0/sweetalert2.all.min.js"></script>
 </head>
+<body>
+<div class="container text-center mt-4">
+    <h1>JavaScript HW5: Image Manipulation</h1>
+    
+    <img id="img1" src="ou.png" style="height:200px; width:auto;"/>
+    
+    <div class="btn-group mt-3" role="group">
+        <button id="addbtn" class="btn btn-primary"><i class="bi bi-plus-square"></i>Increase Size</button>
+        <button id="minusbtn" class="btn btn-danger"><i class="bi bi-dash-square"></i>Decrease Size</button>
+        <button id="rotatebtn" class="btn btn-warning"><i class="bi bi-arrow-clockwise"></i>Rotate</button>
+        <button id="opacitybtn" class="btn btn-info"><i class="bi bi-eye"></i>Toggle Opacity</button>
+        <button id="resetbtn" class="btn btn-secondary"><i class="bi bi-arrow-counterclockwise"></i>Reset Image</button>
+    </div>
+</div>
 
-<img id="img1" src="ou.png" style="height:200px;"/>
+<script>
+    "use strict";
+    const image = document.querySelector("#img1");
 
-    <br />
+    document.querySelector("#addbtn").addEventListener("click", () => {
+        image.width += 10;
+    });
 
-    <button id="addbtn" class="btn btn-primary"><i class="bi bi-plus-square"></i></button>
+    document.querySelector("#minusbtn").addEventListener("click", () => {
+        image.width = -= 10;
+    });
 
-    <button id="minusbtn" class="btn btn-danger">
-        <i class="bi bi-dash-square"></i>
-    </button>
+    let rotation = 0;
+    document.querySelector("#rotatebtn").addEventListener("click", () => {
+        rotation += 45;
+        image.style.transform = `rotate(${rotation}deg)`;
+    });
 
-    <script>
-        "use strict";
-        document.querySelector("#addbtn").addEventListener("click", () =>
-        {
-            let w = document.querySelector("#img1").width
-            w = w + 10;
-            document.querySelector("#img1").width = w;
-        });
+    let isOpaque = true;
+    document.querySelector("#opacitybtn").addEventListener("click", () => {
+        image.style.opacity = isOpaque ? 0.5 : 1;
+        isOpaque = !isOpaque;
+    });
 
-        document.querySelector("#minusbtn").addEventListener("click", () =>
-        {
-            let w = document.querySelector("#img1").width
-            w = w - 10;
-            document.querySelector("#img1").width = w;
-        });
-
-    </script>
+    document.querySelector("#resetbtn").addEventListener("click", () => {
+        image.width = 200;
+        rotation = 0;
+        image.style.transform = "rotate(0deg)";
+        image.style.opacity = 1;
+        isOpaque = true;
+    });
+</script>
 
 </body>
-
 </html>
+
+<?php
+include "view-footer.php";
+?>
