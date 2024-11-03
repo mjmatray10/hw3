@@ -29,15 +29,6 @@ include "view-header.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.8.0/sweetalert2.all.min.js"></script>
 </head>
 
-<div id="d"></div>
-
-    <script>
-        "use strict";
-        let d = document.querySelector("#d");
-        d.style.backgroundColor = "lightblue";
-        d.innerHTML = document.body.innerHTML
-    </script>
-
 <img id="img1" src="ou.png" style="height:200px;"/>
 
     <br />
