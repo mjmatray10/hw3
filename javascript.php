@@ -1,7 +1,12 @@
-<?php
-$PageTitle = "Home";
-include "view-header.php";
-?>
+<div class = "row">
+  <div class = "col">
+<h1>JavaScript HW5</h1>
+  </div>
+  <div class = "col-auto">
+    <?php
+        include "view-header.php";
+    ?>
+  </div>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +23,7 @@ include "view-header.php";
 </head>
 <body>
 <div class="container text-center mt-4">
-    <h1>JavaScript HW5</h1>
+    <h1>Image Manipulation</h1>
     
     <img id="img1" src="ou.png" style="height:200px; width:auto;"/>
 </br>
