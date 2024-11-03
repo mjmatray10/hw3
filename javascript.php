@@ -41,7 +41,7 @@ include "view-header.php";
     });
 
     document.querySelector("#minusbtn").addEventListener("click", () => {
-        image.width = -= 10;
+        image.width -= 10;
     });
 
     let rotation = 0;
