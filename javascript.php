@@ -38,7 +38,7 @@ include "view/header.php";
         d.innerHTML = document.body.innerHTML
     </script>
 
-<img id="img1" src="img/ou.png" style="height:200px;"/>
+<img id="img1" src="ou.png" style="height:200px;"/>
 
     <br />
 
