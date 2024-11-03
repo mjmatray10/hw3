@@ -18,16 +18,16 @@ include "view-header.php";
 </head>
 <body>
 <div class="container text-center mt-4">
-    <h1>JavaScript HW5: Image Manipulation</h1>
+    <h1>JavaScript HW5</h1>
     
     <img id="img1" src="ou.png" style="height:200px; width:auto;"/>
     
     <div class="btn-group mt-3" role="group">
-        <button id="addbtn" class="btn btn-primary"><i class="bi bi-plus-square"></i>Increase Size</button>
-        <button id="minusbtn" class="btn btn-danger"><i class="bi bi-dash-square"></i>Decrease Size</button>
-        <button id="rotatebtn" class="btn btn-warning"><i class="bi bi-arrow-clockwise"></i>Rotate</button>
-        <button id="opacitybtn" class="btn btn-info"><i class="bi bi-eye"></i>Toggle Opacity</button>
-        <button id="resetbtn" class="btn btn-secondary"><i class="bi bi-arrow-counterclockwise"></i>Reset Image</button>
+        <button id="addbtn" class="btn btn-primary"><i class="bi bi-plus-square"></i></button>
+        <button id="minusbtn" class="btn btn-danger"><i class="bi bi-dash-square"></i></button>
+        <button id="rotatebtn" class="btn btn-warning"><i class="bi bi-arrow-clockwise"></i></button>
+        <button id="opacitybtn" class="btn btn-info"><i class="bi bi-eye"></i></button>
+        <button id="resetbtn" class="btn btn-secondary"><i class="bi bi-arrow-counterclockwise"></i></button>
     </div>
 </div>
 
