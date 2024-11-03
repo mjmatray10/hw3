@@ -1,11 +1,11 @@
+ <?php
+        include "view-header.php";
+    ?>
 <div class = "row">
   <div class = "col">
 <h1>JavaScript HW5</h1>
   </div>
   <div class = "col-auto">
-    <?php
-        include "view-header.php";
-    ?>
   </div>
 
 <!DOCTYPE html>
