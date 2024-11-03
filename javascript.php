@@ -36,19 +36,17 @@ include "view-header.php";
     "use strict";
     const image = document.querySelector("#img1");
 
-    document.querySelector("#addbtn").addEventListener("click", () =>
-        {
-            let w = document.querySelector("#img1").width
-            w = w + 10;
-            document.querySelector("#img1").width = w;
-        });
+    document.querySelector("#addbtn").addEventListener("click", () => {
+        let w = image.width;
+        w += 10;
+        image.width = w;
+    });
 
-        document.querySelector("#minusbtn").addEventListener("click", () =>
-        {
-            let w = document.querySelector("#img1").width
-            w = w - 10;
-            document.querySelector("#img1").width = w;
-        });
+    document.querySelector("#minusbtn").addEventListener("click", () => {
+        let w = image.width;  
+        w -= 10;
+        image.width = w > 0 ? w : 0;
+    });
 
     let rotation = 0;
     document.querySelector("#rotatebtn").addEventListener("click", () => {
