@@ -32,7 +32,7 @@
           <a class="nav-link" href="conferences.php">Conferences</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="teams.php">Teams</a>
+          <a class="nav-link" href="javascript.php">Javascript</a>
         </li>
       </ul>
     </div>
