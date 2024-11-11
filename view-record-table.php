@@ -34,7 +34,6 @@
 <script>
   $(document).ready(function() {
     $('#team-records').DataTable({
-      order: [[1, 'desc']]
     });
   });
 </script>
