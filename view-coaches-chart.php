@@ -5,7 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <?php
-while ($coach = $coaches->fetch_assoc()) {
+while ($coaches = $coaches->fetch_assoc()) {
   
 }
 ?>
@@ -19,8 +19,8 @@ while ($coach = $coaches->fetch_assoc()) {
     datasets: [{
         data: [
 <?php
-while ($coach = $coaches->fetch_assoc()) {
-  echo $coach['num_unis'] . ", ";
+while ($coaches = $coaches->fetch_assoc()) {
+  echo $coaches['num_unis'] . ", ";
 }
 ?>
         ]
@@ -30,7 +30,7 @@ while ($coach = $coaches->fetch_assoc()) {
     labels: [
 <?php
 $coaches = selectCoaches();
-while ($coach = $coaches->fetch_assoc()) {
+while ($coaches = $coaches->fetch_assoc()) {
   echo "'" . $coach['coach_name'] . "', ";
 }
 ?>
