@@ -34,6 +34,9 @@
         <li class="nav-item">
           <a class="nav-link" href="javascript.php">Javascript</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="view-coaches-chart.php">Coach Chart</a>
+        </li>
       </ul>
     </div>
   </div>
