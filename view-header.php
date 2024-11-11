@@ -40,6 +40,9 @@
         <li class="nav-item">
           <a class="nav-link" href="coaches-bar.php">Coach Bar Chart</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="uni-map.php">University Map</a>
+        </li>
       </ul>
     </div>
   </div>
