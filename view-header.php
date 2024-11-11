@@ -44,7 +44,7 @@
           <a class="nav-link" href="uni-map.php">University Map</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="record-table.php">Record DataTables</a>
+          <a class="nav-link" href="record-table.php">Record DataTables.js</a>
         </li>
       </ul>
     </div>
