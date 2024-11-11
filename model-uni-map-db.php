@@ -2,7 +2,7 @@
 function selectUniversityLocations() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT university_name, location FROM university");
+        $stmt = $conn->prepare("SELECT university_name, university_location FROM university");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
