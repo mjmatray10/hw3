@@ -37,6 +37,9 @@
         <li class="nav-item">
           <a class="nav-link" href="coaches-chart.php">Coach Chart</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="coaches-bar.php">Coach Bar Chart</a>
+        </li>
       </ul>
     </div>
   </div>
