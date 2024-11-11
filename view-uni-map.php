@@ -16,7 +16,7 @@ const universities = [
 <?php
 $locations = selectUniversityLocations();
 while ($location = $locations->fetch_assoc()) {
-    echo "{ name: '" . $location['university_name'] . "', location: '" . $location['location'] . "' },";
+    echo "{ name: '" . $location['university_name'] . "', location: '" . $location['university_location'] . "' },";
 }
 ?>
 ];
