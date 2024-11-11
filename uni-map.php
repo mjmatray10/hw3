@@ -4,7 +4,7 @@ require_once("model-uni-map-db.php");
 
 $pageTitle = "University Map";
 include "view-header.php";
-$universities = selectUniversities();
+$universities = selectUniversityLocations();
 include "view-uni-map.php";
 include "view-footer.php";
 ?>
