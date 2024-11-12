@@ -28,6 +28,10 @@
             <label for="uName" class="form-label">University Name</label>
             <input type="text" class="form-control" id="uName" name = "uName">
           </div>
+            <div class="mb-3">
+            <label for="ucid" class="form-label">Coach ID</label>
+            <input type="text" class="form-control" id="ucid" name = "ucid">
+          </div>
             <input type = "hidden" name = "actionType" value = "Add">
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
