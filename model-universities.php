@@ -2,7 +2,7 @@
 function selectUniversities() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT university_id, university_location, university_mascot, university_name FROM `university`");
+        $stmt = $conn->prepare("SELECT university_id, university_location, university_mascot, university_name, coach_id FROM `university`");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -27,11 +27,11 @@ function insertUniversities($uLoc, $uMas, $uName, $ucid) {
     }
 }
 
-function updateUniversities($uLoc, $uMas, $uName, $uid) {
+function updateUniversities($uLoc, $uMas, $uName, $ucid, $uid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `university` set `university_location` = ?, `university_mascot` = ?,  `university_name` = ? where university_id = ?");
-        $stmt->bind_param("sssi", $uLoc, $uMas, $uName, $uid);
+        $stmt = $conn->prepare("update `university` set `university_location` = ?, `university_mascot` = ?,  `university_name` = ?, `coach_id` = ? where university_id = ?");
+        $stmt->bind_param("sssii", $uLoc, $uMas, $uName, $ucid, $uid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
