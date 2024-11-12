@@ -16,6 +16,7 @@
       <th>Location</th>
       <th>Mascot</th>
       <th>Name</th>
+        <th>Coach ID</th>
       <th></th>
       <th></th>
       <th></th>
@@ -30,6 +31,8 @@ while ($university = $universities->fetch_assoc()) {
     <td><?php echo $university['university_location']; ?></td>
     <td><?php echo $university['university_mascot']; ?></td>
     <td><?php echo $university['university_name']; ?></td>
+    <td><?php echo $university['coach_id']; ?></td>
+
     <td>
       <?php
       include "view-universities-editform.php";
