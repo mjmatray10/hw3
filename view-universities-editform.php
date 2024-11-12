@@ -28,6 +28,10 @@
             <label for="uName<?php echo $university['university_id']; ?>" class="form-label">University Name</label>
             <input type="text" class="form-control" id="uName<?php echo $university['university_id']; ?>" name = "uName" value="<?php echo $university['university_name']; ?>">
           </div>
+          <div class="mb-3">
+            <label for="ucid<?php echo $university['university_id']; ?>" class="form-label">Coach ID</label>
+            <input type="text" class="form-control" id="ucid<?php echo $university['university_id']; ?>" name = "ucid" value="<?php echo $university['coach_id']; ?>">
+          </div>
             <input type="hidden" name = "uid" value="<?php echo $university['university_id']; ?>">
             <input type = "hidden" name = "actionType" value = "Edit">
           <button type="submit" class="btn btn-primary">Save</button>
