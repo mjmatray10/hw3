@@ -13,11 +13,11 @@ function selectUniversities() {
     }
 }
 
-function insertUniversities($uLoc, $uMas, $uName) {
+function insertUniversities($uLoc, $uMas, $uName, $ucid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `university` (`university_location`, `university_mascot`,  `university_name`) VALUES (?,?,?)");
-        $stmt->bind_param("sss", $uLoc, $uMas, $uName);
+        $stmt = $conn->prepare("INSERT INTO `university` (`university_location`, `university_mascot`,  `university_name`, `coach_id`) VALUES (?,?,?,?)");
+        $stmt->bind_param("sssi", $uLoc, $uMas, $uName, $ucid);
         $success = $stmt->execute();
         $conn->close();
         return $success;
